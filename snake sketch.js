@@ -1,7 +1,7 @@
 var s;
 var scl = 30;
 var food;
-var highScore = 0;
+highScore = 0;
 isDiagnosedWithDie = false;
 
 function setup() {
@@ -59,15 +59,26 @@ function draw() {
     text("Highscore: " + highScore, 20, 50);
 }
 
+var p = 0;
+var q = 0;
+
 function keyPressed() {
-    if (keyCode === UP_ARROW) {
-        s.dir(0, -1);
-    } else if (keyCode === DOWN_ARROW) {
-        s.dir(0, 1);
-    } else if (keyCode === RIGHT_ARROW) {
-        s.dir(1, 0);
-    } else if (keyCode === LEFT_ARROW) {
-        s.dir(-1, 0);
+    if (keyCode === UP_ARROW && q != 1) {
+        q = -1;
+        p = 0;
+        s.dir(0, q);
+    } else if (keyCode === DOWN_ARROW && q != -1) {
+        q = 1;
+        p = 0;
+        s.dir(0, q);
+    } else if (keyCode === RIGHT_ARROW && p != -1) {
+        p = 1;
+        q = 0;
+        s.dir(p, 0);
+    } else if (keyCode === LEFT_ARROW && p != 1) {
+        p = -1;
+        q = 0;
+        s.dir(p, 0);
     }
 }
 
