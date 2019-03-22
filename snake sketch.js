@@ -52,6 +52,7 @@ function draw() {
         pop();
         if (s.count > highScore) {
             highScore = s.count;
+            localStorage.setItem("scoreList", highScore);
         }
     }
 

@@ -25,6 +25,8 @@ function Snake() {
         this.tail = [];
         this.xspeed = 1;
         this.yspeed = 0;
+        p = 0;
+        q = 0;
     }
 
     this.checkIfDead = function () {
