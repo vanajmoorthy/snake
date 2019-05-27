@@ -6,7 +6,7 @@ isDiagnosedWithDie = false;
 
 function setup() {
     frameRate(9);
-    createCanvas(600, 600, P2D);
+    createCanvas(700, 700, P2D);
     s = new Snake();
     pickLocation();
 }
