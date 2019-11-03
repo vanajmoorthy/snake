@@ -6,7 +6,7 @@ isDiagnosedWithDie = false;
 
 function setup() {
     frameRate(9);
-    createCanvas(700, 700, P2D);
+    createCanvas(691, 691, P2D);
     s = new Snake();
     pickLocation();
 }
@@ -22,7 +22,7 @@ function pickLocation() {
 // }
 
 function draw() {
-    background(51);
+    background(47);
     var justAte = s.eat(food);
 
     if (!isDiagnosedWithDie) {
@@ -38,6 +38,8 @@ function draw() {
     fill(29, 167, 234);
     rect(food.x, food.y, scl, scl);
     console.log(s.count);
+    noStroke();
+
     fill(255);
     text("Score: " + s.count, 20, 30);
 
@@ -48,7 +50,9 @@ function draw() {
     if (isDiagnosedWithDie) {
         push();
         textSize(25);
-        text("I have diagnosed you with a big case of die. \n\nYour final score was: " + s.count, 50, 250);
+        textAlign(CENTER, CENTER);
+        translate(width/2, height/2);
+        text("I have diagnosed you with a big case of die. \n\nYour final score was: " + s.count, 0, 0);
         pop();
         if (s.count > highScore) {
             highScore = s.count;
@@ -57,7 +61,7 @@ function draw() {
     }
 
 
-    text("Highscore: " + highScore, 20, 50);
+    text("Session Highscore: " + highScore, 20, 50);
 }
 
 var p = 0;
